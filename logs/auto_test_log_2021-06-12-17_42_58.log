@@ -1,0 +1,44 @@
+------2021-06-12 17:42:59,168--INFO:python_api_automation:
+
+
+打开表单登录接口
+
+--myexcel.py---20
+------2021-06-12 17:42:59,655--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='15500000000',获取执行条数的执行结果为1--mypymysql.py---31
+------2021-06-12 17:42:59,975--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='17679571234',获取执行条数的执行结果为1--mypymysql.py---31
+------2021-06-12 17:42:59,980--INFO:python_api_automation:替换标识符后的用例：{'id': 1, 'title': '冒烟-登录', 'method': 'post', 'url': '/member/login', 'req_data': '{"mobile_phone": "18610100022","pwd": "123456789"}', 'assertion': '[{"expression":"$..code","expected":0,"type":"equal"},{"expression":"$..msg","expected":"OK","type":"equal"}]', None: None}--myreplace.py---52
+------2021-06-12 17:43:00,091--INFO:python_api_automation:响应结果为：{'code': 1, 'msg': '密码为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---49
+------2021-06-12 17:43:00,092--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 0, 'type': 'equal'}, {'expression': '$..msg', 'expected': 'OK', 'type': 'equal'}]--myassert.py---38
+------2021-06-12 17:43:00,096--INFO:python_api_automation:对比实际提取结果1,和预期结果0，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,096--INFO:python_api_automation:对比实际提取结果密码为空,和预期结果OK，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,097--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---56
+------2021-06-12 17:43:00,260--INFO:python_api_automation:替换标识符后的用例：{'id': 2, 'title': '手机号多一位', 'method': 'post', 'url': '/member/login', 'req_data': '{"mobile_phone": "186101000222","pwd": "123456789"}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"无效的手机格式","type":"equal"}]', None: None}--myreplace.py---52
+------2021-06-12 17:43:00,377--INFO:python_api_automation:响应结果为：{'code': 1, 'msg': '密码为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---49
+------2021-06-12 17:43:00,378--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '无效的手机格式', 'type': 'equal'}]--myassert.py---38
+------2021-06-12 17:43:00,378--INFO:python_api_automation:对比实际提取结果1,和预期结果2，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,379--INFO:python_api_automation:对比实际提取结果密码为空,和预期结果无效的手机格式，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,379--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---56
+------2021-06-12 17:43:00,402--INFO:python_api_automation:替换标识符后的用例：{'id': 3, 'title': '手机号少一位', 'method': 'post', 'url': '/member/login', 'req_data': '{"mobile_phone": "1861010002","pwd": "123456789"}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"无效的手机格式","type":"equal"}]', None: None}--myreplace.py---52
+------2021-06-12 17:43:00,516--INFO:python_api_automation:响应结果为：{'code': 1, 'msg': '密码为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---49
+------2021-06-12 17:43:00,517--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '无效的手机格式', 'type': 'equal'}]--myassert.py---38
+------2021-06-12 17:43:00,518--INFO:python_api_automation:对比实际提取结果1,和预期结果2，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,518--INFO:python_api_automation:对比实际提取结果密码为空,和预期结果无效的手机格式，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,519--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---56
+------2021-06-12 17:43:00,541--INFO:python_api_automation:替换标识符后的用例：{'id': 4, 'title': '手机号错误1位', 'method': 'post', 'url': '/member/login', 'req_data': '{"mobile_phone": "18610110022","pwd": "123456789"}', 'assertion': '[{"expression":"$..code","expected":1001,"type":"equal"},{"expression":"$..msg","expected":"账号信息错误","type":"equal"}]', None: None}--myreplace.py---52
+------2021-06-12 17:43:00,657--INFO:python_api_automation:响应结果为：{'code': 1, 'msg': '密码为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---49
+------2021-06-12 17:43:00,658--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 1001, 'type': 'equal'}, {'expression': '$..msg', 'expected': '账号信息错误', 'type': 'equal'}]--myassert.py---38
+------2021-06-12 17:43:00,658--INFO:python_api_automation:对比实际提取结果1,和预期结果1001，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,659--INFO:python_api_automation:对比实际提取结果密码为空,和预期结果账号信息错误，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,659--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---56
+------2021-06-12 17:43:00,682--INFO:python_api_automation:替换标识符后的用例：{'id': 5, 'title': '密码少一位', 'method': 'post', 'url': '/member/login', 'req_data': '{"mobile_phone": "18610100022","pwd": "12345678"}', 'assertion': '[{"expression":"$..code","expected":1001,"type":"equal"},{"expression":"$..msg","expected":"账号信息错误","type":"equal"}]', None: None}--myreplace.py---52
+------2021-06-12 17:43:00,806--INFO:python_api_automation:响应结果为：{'code': 1, 'msg': '密码为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---49
+------2021-06-12 17:43:00,807--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 1001, 'type': 'equal'}, {'expression': '$..msg', 'expected': '账号信息错误', 'type': 'equal'}]--myassert.py---38
+------2021-06-12 17:43:00,807--INFO:python_api_automation:对比实际提取结果1,和预期结果1001，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,808--INFO:python_api_automation:对比实际提取结果密码为空,和预期结果账号信息错误，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,808--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---56
+------2021-06-12 17:43:00,829--INFO:python_api_automation:替换标识符后的用例：{'id': 6, 'title': '密码多一位', 'method': 'post', 'url': '/member/login', 'req_data': '{"mobile_phone": "18610100022","pwd": "1234567890"}', 'assertion': '[{"expression":"$..code","expected":1001,"type":"equal"},{"expression":"$..msg","expected":"账号信息错误","type":"equal"}]', None: None}--myreplace.py---52
+------2021-06-12 17:43:00,946--INFO:python_api_automation:响应结果为：{'code': 1, 'msg': '密码为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---49
+------2021-06-12 17:43:00,947--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 1001, 'type': 'equal'}, {'expression': '$..msg', 'expected': '账号信息错误', 'type': 'equal'}]--myassert.py---38
+------2021-06-12 17:43:00,953--INFO:python_api_automation:对比实际提取结果1,和预期结果1001，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,954--INFO:python_api_automation:对比实际提取结果密码为空,和预期结果账号信息错误，是否相等：False--myassert.py---50
+------2021-06-12 17:43:00,954--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---56

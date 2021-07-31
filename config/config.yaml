@@ -1,0 +1,20 @@
+server:
+ host: http://api.lemonban.com/futureloan
+
+headers:
+ X-Lemonban-Media-Type: lemonban.v2
+ Content-Type: application/json
+
+database:
+ host: api.lemonban.com
+ user: future
+ password: '123456'
+ port: 3306
+ database: futureloan
+
+
+
+log_conf:
+  name: "python_api_automation"
+  level: "INFO"
+  formatter: "------%(asctime)s--%(levelname)s:%(name)s:%(message)s--%(filename)s---%(lineno)s"

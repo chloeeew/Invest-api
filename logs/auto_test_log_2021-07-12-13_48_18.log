@@ -1,0 +1,88 @@
+------2021-07-12 13:48:19,250--INFO:python_api_automation:
+
+
+打开表单充值接口
+
+--myexcel.py---20
+------2021-07-12 13:48:19,456--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='15500000000',获取执行条数的执行结果为1--mypymysql.py---31
+------2021-07-12 13:48:19,535--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='17679571234',获取执行条数的执行结果为1--mypymysql.py---31
+------2021-07-12 13:48:19,538--INFO:python_api_automation:替换标识符后的用例：{'id': 1, 'title': '登录', 'type': 'setup', 'method': 'post', 'url': '/member/login', 'req_data': '{"mobile_phone": "18610100022","pwd": "123456789"}', 'extract': '{"token":"$..token","member_id":"$..id","leave_amount":"$..leave_amount"}', 'assertion': None, 'assert_db': None}--myreplace.py---52
+------2021-07-12 13:48:19,540--INFO:python_api_automation:请求的数据为：{'mobile_phone': '18610100022', 'pwd': '123456789'} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/login 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-12 13:48:19,598--INFO:python_api_automation:响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 677, 'leave_amount': 4002.0, 'mobile_phone': '18610100022', 'reg_name': 'py37小简', 'reg_time': '2021-06-30 22:36:48.0', 'type': 0, 'token_info': {'token_type': 'Bearer', 'expires_in': '2021-07-12 13:53:19', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA'}}, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---53
+------2021-07-12 13:48:19,599--INFO:python_api_automation:转换提取表达式字符串成字典：{'token': '$..token', 'member_id': '$..id', 'leave_amount': '$..leave_amount'}--myextract.py---28
+------2021-07-12 13:48:19,602--INFO:python_api_automation:设置测试类的全局变量token,值为eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA--myextract.py---35
+------2021-07-12 13:48:19,603--INFO:python_api_automation:设置测试类的全局变量member_id,值为677--myextract.py---35
+------2021-07-12 13:48:19,604--INFO:python_api_automation:设置测试类的全局变量leave_amount,值为4002.0--myextract.py---35
+------2021-07-12 13:48:19,615--INFO:python_api_automation:替换标识符后的用例：{'id': 2, 'title': '充值1元', 'type': 'success', 'method': 'post', 'url': '/member/recharge', 'req_data': '{"member_id":677,"amount":1}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assertion': '[{"expression":"$..code","expected":0,"type":"equal"},{"expression":"$..msg","expected":"OK","type":"equal"},{"expression":"$..leave_amount","expected":4002.0+1,"type":"equal"}]', 'assert_db': '[{"sql":"select leave_amount from member where id=\'677\'","expected":{\'leave_amount\':4002.0+1},"type_db":"equal"}]'}--myreplace.py---52
+------2021-07-12 13:48:19,616--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA--myrequests.py---66
+------2021-07-12 13:48:19,616--INFO:python_api_automation:请求的数据为：{'member_id': 677, 'amount': 1} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/recharge 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA'}--myrequests.py---33
+------2021-07-12 13:48:19,656--INFO:python_api_automation:响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 677, 'leave_amount': 4003.0, 'mobile_phone': '18610100022', 'reg_name': 'py37小简', 'reg_time': '2021-06-30 22:36:48.0', 'type': 0}, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---53
+------2021-07-12 13:48:19,658--INFO:python_api_automation:转换提取表达式字符串成字典：{'leave_amount': '$..leave_amount'}--myextract.py---28
+------2021-07-12 13:48:19,659--INFO:python_api_automation:设置测试类的全局变量leave_amount,值为4003.0--myextract.py---35
+------2021-07-12 13:48:19,659--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 0, 'type': 'equal'}, {'expression': '$..msg', 'expected': 'OK', 'type': 'equal'}, {'expression': '$..leave_amount', 'expected': 4003.0, 'type': 'equal'}]--myassert.py---38
+------2021-07-12 13:48:19,660--INFO:python_api_automation:对比实际提取结果0,和预期结果0，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,661--INFO:python_api_automation:对比实际提取结果OK,和预期结果OK，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,662--INFO:python_api_automation:对比实际提取结果4003.0,和预期结果4003.0，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,663--INFO:python_api_automation:断言响应结果成功--myassert.py---59
+------2021-07-12 13:48:19,663--INFO:python_api_automation:转换断言数据库字符串成对应格式[{'sql': "select leave_amount from member where id='677'", 'expected': {'leave_amount': 4003.0}, 'type_db': 'equal'}]--myassert.py---78
+------2021-07-12 13:48:19,759--INFO:python_api_automation:执行的sql语句为select leave_amount from member where id='677',执行结果为{'leave_amount': Decimal('4003.00')}--mypymysql.py---39
+------2021-07-12 13:48:19,759--INFO:python_api_automation:对比实际结果{'leave_amount': 4003.0},和预期结果{'leave_amount': 4003.0}，是否相等：True--myassert.py---95
+------2021-07-12 13:48:19,759--INFO:python_api_automation:断言数据库结果成功--myassert.py---104
+------2021-07-12 13:48:19,769--INFO:python_api_automation:替换标识符后的用例：{'id': 3, 'title': '充值2000元', 'type': 'success', 'method': 'post', 'url': '/member/recharge', 'req_data': '{"member_id":677,"amount":2000}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assertion': '[{"expression":"$..code","expected":0,"type":"equal"},{"expression":"$..msg","expected":"OK","type":"equal"},{"expression":"$..leave_amount","expected":4003.0+2000,"type":"equal"}]', 'assert_db': '[{"sql":"select leave_amount from member where id=\'677\'","expected":{\'leave_amount\':4003.0+2000},"type_db":"equal"}]'}--myreplace.py---52
+------2021-07-12 13:48:19,770--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA--myrequests.py---66
+------2021-07-12 13:48:19,770--INFO:python_api_automation:请求的数据为：{'member_id': 677, 'amount': 2000} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/recharge 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA'}--myrequests.py---33
+------2021-07-12 13:48:19,809--INFO:python_api_automation:响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 677, 'leave_amount': 6003.0, 'mobile_phone': '18610100022', 'reg_name': 'py37小简', 'reg_time': '2021-06-30 22:36:48.0', 'type': 0}, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---53
+------2021-07-12 13:48:19,809--INFO:python_api_automation:转换提取表达式字符串成字典：{'leave_amount': '$..leave_amount'}--myextract.py---28
+------2021-07-12 13:48:19,810--INFO:python_api_automation:设置测试类的全局变量leave_amount,值为6003.0--myextract.py---35
+------2021-07-12 13:48:19,810--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 0, 'type': 'equal'}, {'expression': '$..msg', 'expected': 'OK', 'type': 'equal'}, {'expression': '$..leave_amount', 'expected': 6003.0, 'type': 'equal'}]--myassert.py---38
+------2021-07-12 13:48:19,810--INFO:python_api_automation:对比实际提取结果0,和预期结果0，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,810--INFO:python_api_automation:对比实际提取结果OK,和预期结果OK，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,811--INFO:python_api_automation:对比实际提取结果6003.0,和预期结果6003.0，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,811--INFO:python_api_automation:断言响应结果成功--myassert.py---59
+------2021-07-12 13:48:19,811--INFO:python_api_automation:转换断言数据库字符串成对应格式[{'sql': "select leave_amount from member where id='677'", 'expected': {'leave_amount': 6003.0}, 'type_db': 'equal'}]--myassert.py---78
+------2021-07-12 13:48:19,865--INFO:python_api_automation:执行的sql语句为select leave_amount from member where id='677',执行结果为{'leave_amount': Decimal('6003.00')}--mypymysql.py---39
+------2021-07-12 13:48:19,865--INFO:python_api_automation:对比实际结果{'leave_amount': 6003.0},和预期结果{'leave_amount': 6003.0}，是否相等：True--myassert.py---95
+------2021-07-12 13:48:19,866--INFO:python_api_automation:断言数据库结果成功--myassert.py---104
+------2021-07-12 13:48:19,879--INFO:python_api_automation:替换标识符后的用例：{'id': 4, 'title': '充值1.01元', 'type': 'success', 'method': 'post', 'url': '/member/recharge', 'req_data': '{"member_id":677,"amount":1.01}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assertion': '[{"expression":"$..code","expected":0,"type":"equal"},{"expression":"$..msg","expected":"OK","type":"equal"},{"expression":"$..leave_amount","expected":6003.0+1.01,"type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-12 13:48:19,880--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA--myrequests.py---66
+------2021-07-12 13:48:19,880--INFO:python_api_automation:请求的数据为：{'member_id': 677, 'amount': 1.01} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/recharge 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA'}--myrequests.py---33
+------2021-07-12 13:48:19,920--INFO:python_api_automation:响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 677, 'leave_amount': 6004.01, 'mobile_phone': '18610100022', 'reg_name': 'py37小简', 'reg_time': '2021-06-30 22:36:48.0', 'type': 0}, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---53
+------2021-07-12 13:48:19,921--INFO:python_api_automation:转换提取表达式字符串成字典：{'leave_amount': '$..leave_amount'}--myextract.py---28
+------2021-07-12 13:48:19,921--INFO:python_api_automation:设置测试类的全局变量leave_amount,值为6004.01--myextract.py---35
+------2021-07-12 13:48:19,922--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 0, 'type': 'equal'}, {'expression': '$..msg', 'expected': 'OK', 'type': 'equal'}, {'expression': '$..leave_amount', 'expected': 6004.01, 'type': 'equal'}]--myassert.py---38
+------2021-07-12 13:48:19,922--INFO:python_api_automation:对比实际提取结果0,和预期结果0，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,923--INFO:python_api_automation:对比实际提取结果OK,和预期结果OK，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,924--INFO:python_api_automation:对比实际提取结果6004.01,和预期结果6004.01，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,924--INFO:python_api_automation:断言响应结果成功--myassert.py---59
+------2021-07-12 13:48:19,934--INFO:python_api_automation:替换标识符后的用例：{'id': 5, 'title': '充值1999.99元', 'type': 'success', 'method': 'post', 'url': '/member/recharge', 'req_data': '{"member_id":677,"amount":1999.99}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assertion': '[{"expression":"$..code","expected":0,"type":"equal"},{"expression":"$..msg","expected":"OK","type":"equal"},{"expression":"$..leave_amount","expected":6004.01+1999.99,"type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-12 13:48:19,935--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA--myrequests.py---66
+------2021-07-12 13:48:19,935--INFO:python_api_automation:请求的数据为：{'member_id': 677, 'amount': 1999.99} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/recharge 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA'}--myrequests.py---33
+------2021-07-12 13:48:19,971--INFO:python_api_automation:响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 677, 'leave_amount': 8004.0, 'mobile_phone': '18610100022', 'reg_name': 'py37小简', 'reg_time': '2021-06-30 22:36:48.0', 'type': 0}, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---53
+------2021-07-12 13:48:19,972--INFO:python_api_automation:转换提取表达式字符串成字典：{'leave_amount': '$..leave_amount'}--myextract.py---28
+------2021-07-12 13:48:19,973--INFO:python_api_automation:设置测试类的全局变量leave_amount,值为8004.0--myextract.py---35
+------2021-07-12 13:48:19,973--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 0, 'type': 'equal'}, {'expression': '$..msg', 'expected': 'OK', 'type': 'equal'}, {'expression': '$..leave_amount', 'expected': 8004.0, 'type': 'equal'}]--myassert.py---38
+------2021-07-12 13:48:19,974--INFO:python_api_automation:对比实际提取结果0,和预期结果0，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,974--INFO:python_api_automation:对比实际提取结果OK,和预期结果OK，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,975--INFO:python_api_automation:对比实际提取结果8004.0,和预期结果8004.0，是否相等：True--myassert.py---50
+------2021-07-12 13:48:19,975--INFO:python_api_automation:断言响应结果成功--myassert.py---59
+------2021-07-12 13:48:19,987--INFO:python_api_automation:替换标识符后的用例：{'id': 4, 'title': '充值成功mock测试', 'type': 'mock_success', 'method': 'post', 'url': 'https://www.fastmock.site/mock/a25c73220e080afccc5c3362c6782a39/member/member/recharge', 'req_data': '{"member_id":2250,"amount":1999.99}', 'extract': None, 'assertion': '[{"expression":"$..code","expected":0,"type":"equal"},{"expression":"$..msg","expected":"ok!!","type":"equal"},{"expression":"$..leave_amount","expected":1999.99,"type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-12 13:48:19,988--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA--myrequests.py---66
+------2021-07-12 13:48:19,989--INFO:python_api_automation:请求的数据为：{'member_id': 2250, 'amount': 1999.99} 
+ 请求的地址url为https://www.fastmock.site/mock/a25c73220e080afccc5c3362c6782a39/member/member/recharge 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjY3NywiZXhwIjoxNjI2MDY5MTk5fQ.4SYz_gxtFmHh-dP7gODNJf-VO_5ptPPTbt4xSBh2igTxQyu1NPH_8O_HsmQ9Egm31FF0nri55cLqL6lAN7zSeA'}--myrequests.py---33
+------2021-07-12 13:48:20,104--INFO:python_api_automation:响应结果为：{'code': 0, 'msg': 'ok!!', 'data': {'id': 89, 'reg_name': '廖杰', 'leave_amount': 1999.99}}--myrequests.py---53
+------2021-07-12 13:48:20,104--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 0, 'type': 'equal'}, {'expression': '$..msg', 'expected': 'ok!!', 'type': 'equal'}, {'expression': '$..leave_amount', 'expected': 1999.99, 'type': 'equal'}]--myassert.py---38
+------2021-07-12 13:48:20,105--INFO:python_api_automation:对比实际提取结果0,和预期结果0，是否相等：True--myassert.py---50
+------2021-07-12 13:48:20,105--INFO:python_api_automation:对比实际提取结果ok!!,和预期结果ok!!，是否相等：True--myassert.py---50
+------2021-07-12 13:48:20,105--INFO:python_api_automation:对比实际提取结果1999.99,和预期结果1999.99，是否相等：True--myassert.py---50
+------2021-07-12 13:48:20,105--INFO:python_api_automation:断言响应结果成功--myassert.py---59
