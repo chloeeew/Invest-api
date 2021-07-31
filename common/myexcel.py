@@ -19,7 +19,7 @@ class MyExcel:
         self.m_sheet = self.wb[sheet_name]
         logger.info(f"\n\n\n打开表单{sheet_name}\n\n")
 
-    def get_excel_data(self):
+    def get_excel_data(self) -> list:
         """
         获取sheet中的所有数据，第一行作为key，后续行作为values，每一行数据是字典形式，用列表存储
         返回列表
@@ -41,10 +41,9 @@ class MyExcel:
             result_dict = dict(zip(keys, values))
             results.append(result_dict)
             values = []
-        print(results)
         return results
 
 
 
 if __name__ == "__main__":
-    MyExcel("充值接口").get_excel_data()
+    print(MyExcel("充值接口").get_excel_data())

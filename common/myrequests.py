@@ -47,19 +47,23 @@ class MyRequests:
             logger.error("请求失败，请检查请求数据")
             raise ce
         else:
-            if method == "post" or method == "patch":
-                # 用json格式返回响应体
-                response_json = response.json()
-                logger.info(f"响应结果为：{response_json}")
-                return response_json
-            else:
-                # 返回响应内容
-                # response.content.decode("utf-8")
-                response.encoding="utf-8"
-                response_text = response.text
-
-                logger.info(f"响应结果为：{response_text}")
-                return response_text
+            response.encoding = "utf-8"
+            response_json = response.json()
+            logger.info(f"响应结果为：{response_json}")
+            return response_json
+            # if method == "post" or method == "patch":
+            #     # 用json格式返回响应体
+            #     response_json = response.json()
+            #     logger.info(f"响应结果为：{response_json}")
+            #     return response_json
+            # else:
+            #     # 返回响应内容是
+            #     # response.content.decode("utf-8")
+            #     response.encoding="utf-8"
+            #     response_text = response.text
+            #
+            #     logger.info(f"响应结果为：{response_text}")
+            #     return response_text
 
     def __deal_token(self, p_token):
         """处理存在token时的情况"""

@@ -18,13 +18,15 @@ def global_init():
     1、从Data里拿出来判断的用户数据 global_users
     2、调用sql从数据库查询，如果不存在就注册
     """
-    for user in Data.global_user:
-        phone_num_exist = is_phone_exist(user)
-        if not phone_num_exist:
-            req_data = {"mobile_phone":user,"pwd":"123456789"}
-            result = MyRequests().send_requests("post","/member/register",req_data)
-            # 注册接口
+    phone_num_exist = is_phone_exist(Data.user)
+    if not phone_num_exist:
+        req_data = {"mobile_phone":Data.user,"pwd":Data.pwd}
+        MyRequests().send_requests("post","/member/register",req_data)
 
+    phone_admin_num_exit = is_phone_exist(Data.admin)
+    if not phone_admin_num_exit:
+        req_data_admin = {"mobile_phone":Data.admin,"pwd":Data.admin_pwd,"type":0}
+        MyRequests().send_requests("post", "/member/register", req_data_admin)
 
 @pytest.fixture(scope="class")
 def class_share_data_init():

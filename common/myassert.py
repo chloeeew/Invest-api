@@ -34,7 +34,7 @@ class MyAssert:
         step4---- 根据列表 result_bool_list 是否存在False，抛出AssertionError
         """
         assert_list = eval(assert_str)
-        logger.info(f"转换断言响应结果的字符串成对应格式{assert_list}")
+        logger.info(f"转换断言响应结果的字符串成对应格式{assert_list},类型为{type(assert_list)}")
         result_bool_list = []
 
         for each_assert in assert_list:
@@ -42,12 +42,14 @@ class MyAssert:
             assert_expect = each_assert["expected"]
             assert_type = each_assert["type"]
 
-            actual = jsonpath.jsonpath(response_dict, jp_express)[0]
-            if not actual:
+            # 不用jsonpath.jsonpath()[0]直接获得值是因为值可能是0
+            actual_list = jsonpath.jsonpath(response_dict, jp_express)
+            if not actual_list:
                 # 表达式找不到actual==False
                 logger.error(f"{jp_express}无法在{response_dict}中提取出来，请检查表达式")
                 raise TypeError
 
+            actual = actual_list[0]
             if assert_type == "equal":
                 result_bool_list.append(assert_expect == actual)
                 logger.info(f"对比实际提取结果{actual},和预期结果{assert_expect}，是否相等：{assert_expect == actual}")
@@ -108,12 +110,11 @@ class MyAssert:
             return True
 
 
-if __name__ == "__main__":
+
+
+# if __name__ == "__main__":
     # db_list = '[{"sql":"select id from member where mobile_phone=\'15697042402\'","expected":1,"type_db":"count"}]'
     # print(MyAssert().assert_database(db_list))
-    fake_json = {
-        "code":200,
-        "msg":"abc"
-    }
-    fake_expression_str = '[{"expression":"$..qq","expected":0,"type":"equal"}]'
-    MyAssert().assert_by_json(fake_json, fake_expression_str)
+    # fake_json = {'code': 0, 'msg': 'OK'}
+    # fake_expression_str = "[{'expression': '$.code', 'expected': 0, 'type': 'equal'}]"
+    # MyAssert().assert_by_json(fake_json, fake_expression_str)
