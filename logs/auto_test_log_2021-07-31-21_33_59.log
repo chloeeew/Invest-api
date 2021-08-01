@@ -1,0 +1,122 @@
+------2021-07-31 21:34:00,171--INFO:python_api_automation:
+
+
+打开表单注册接口
+
+--myexcel.py---20
+------2021-07-31 21:34:00,368--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='15500000000',获取执行条数的执行结果为1--mypymysql.py---31
+------2021-07-31 21:34:00,471--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='17679571234',获取执行条数的执行结果为1--mypymysql.py---31
+------2021-07-31 21:34:00,829--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='18855654510',获取执行条数的执行结果为0--mypymysql.py---31
+------2021-07-31 21:34:00,830--INFO:python_api_automation:脚本生成随机手机号18855654510,并替换到#phone#中--myreplace.py---37
+------2021-07-31 21:34:00,830--INFO:python_api_automation:替换标识符后的用例：{'id': 1, 'title': '注册成功-普通用户', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone": "18855654510","pwd": "123456789","reg_name": "py37小简"}', 'assertion': '[{"expression":"$..code","expected":0,"type":"equal"},{"expression":"$..msg","expected":"OK","type":"equal"}]', 'assert_db': '[{"sql":"select id from member where mobile_phone=\'18855654510\'","expected":1,"type_db":"count"}]'}--myreplace.py---52
+------2021-07-31 21:34:00,831--INFO:python_api_automation:请求的数据为：{'mobile_phone': '18855654510', 'pwd': '123456789', 'reg_name': 'py37小简'} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:00,919--INFO:python_api_automation:响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 123475393, 'reg_name': 'py37小简', 'mobile_phone': '18855654510'}, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:00,920--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 0, 'type': 'equal'}, {'expression': '$..msg', 'expected': 'OK', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:00,922--INFO:python_api_automation:对比实际提取结果0,和预期结果0，是否相等：True--myassert.py---55
+------2021-07-31 21:34:00,923--INFO:python_api_automation:对比实际提取结果OK,和预期结果OK，是否相等：True--myassert.py---55
+------2021-07-31 21:34:00,923--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:00,924--INFO:python_api_automation:转换断言数据库字符串成对应格式[{'sql': "select id from member where mobile_phone='18855654510'", 'expected': 1, 'type_db': 'count'}]--myassert.py---83
+------2021-07-31 21:34:01,003--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='18855654510',获取执行条数的执行结果为1--mypymysql.py---31
+------2021-07-31 21:34:01,003--INFO:python_api_automation:对比实际结果1,和预期结果1，是否相等：True--myassert.py---100
+------2021-07-31 21:34:01,003--INFO:python_api_automation:断言数据库结果成功--myassert.py---109
+------2021-07-31 21:34:01,014--INFO:python_api_automation:替换标识符后的用例：{'id': 2, 'title': '注册成功-管理员', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone": "18610100022","pwd": "123456789","reg_name": "py37小简","type":0}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"账号已存在","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,015--INFO:python_api_automation:请求的数据为：{'mobile_phone': '18610100022', 'pwd': '123456789', 'reg_name': 'py37小简', 'type': 0} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,101--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,101--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '账号已存在', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,101--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,102--INFO:python_api_automation:对比实际提取结果账号已存在,和预期结果账号已存在，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,102--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,108--INFO:python_api_automation:替换标识符后的用例：{'id': 3, 'title': '不输入手机号', 'method': 'post', 'url': '/member/register', 'req_data': '{"pwd":"12345678","type":1}', 'assertion': '[{"expression":"$..code","expected":1,"type":"equal"},{"expression":"$..msg","expected":"手机号为空","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,109--INFO:python_api_automation:请求的数据为：{'pwd': '12345678', 'type': 1} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,138--INFO:python_api_automation:响应结果为：{'code': 1, 'msg': '手机号为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,138--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 1, 'type': 'equal'}, {'expression': '$..msg', 'expected': '手机号为空', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,138--INFO:python_api_automation:对比实际提取结果1,和预期结果1，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,138--INFO:python_api_automation:对比实际提取结果手机号为空,和预期结果手机号为空，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,138--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,141--INFO:python_api_automation:替换标识符后的用例：{'id': 4, 'title': '手机号长度10位', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone":"1550000000","pwd":"12345678","type":1}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"无效的手机格式","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,142--INFO:python_api_automation:请求的数据为：{'mobile_phone': '1550000000', 'pwd': '12345678', 'type': 1} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,175--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '无效的手机格式', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,175--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '无效的手机格式', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,175--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,176--INFO:python_api_automation:对比实际提取结果无效的手机格式,和预期结果无效的手机格式，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,176--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,179--INFO:python_api_automation:替换标识符后的用例：{'id': 5, 'title': '手机号长度12位', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone":"155000000001","pwd":"12345678","type":1}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"无效的手机格式","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,179--INFO:python_api_automation:请求的数据为：{'mobile_phone': '155000000001', 'pwd': '12345678', 'type': 1} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,215--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '无效的手机格式', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,215--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '无效的手机格式', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,215--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,216--INFO:python_api_automation:对比实际提取结果无效的手机格式,和预期结果无效的手机格式，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,216--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,218--INFO:python_api_automation:替换标识符后的用例：{'id': 6, 'title': '手机号含有非法字符', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone":"1550000000q","pwd":"12345678","type":1}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"无效的手机格式","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,219--INFO:python_api_automation:请求的数据为：{'mobile_phone': '1550000000q', 'pwd': '12345678', 'type': 1} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,246--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '无效的手机格式', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,247--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '无效的手机格式', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,247--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,247--INFO:python_api_automation:对比实际提取结果无效的手机格式,和预期结果无效的手机格式，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,247--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,250--INFO:python_api_automation:替换标识符后的用例：{'id': 7, 'title': '已注册过的手机号', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone":"15500000000","pwd":"12345678","type":1}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"账号已存在","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,250--INFO:python_api_automation:请求的数据为：{'mobile_phone': '15500000000', 'pwd': '12345678', 'type': 1} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,330--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '账号已存在', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,331--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '账号已存在', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,331--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,332--INFO:python_api_automation:对比实际提取结果账号已存在,和预期结果账号已存在，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,332--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,340--INFO:python_api_automation:替换标识符后的用例：{'id': 8, 'title': '密码7位', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone":"15500056781","pwd":"1234567","type":1}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"密码格式为8到16位","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,341--INFO:python_api_automation:请求的数据为：{'mobile_phone': '15500056781', 'pwd': '1234567', 'type': 1} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,377--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '密码格式为8到16位', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,377--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '密码格式为8到16位', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,377--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,377--INFO:python_api_automation:对比实际提取结果密码格式为8到16位,和预期结果密码格式为8到16位，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,378--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,382--INFO:python_api_automation:替换标识符后的用例：{'id': 9, 'title': '密码17位', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone":"15500000001","pwd":"12345678901234567","type":1}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"密码格式为8到16位","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,382--INFO:python_api_automation:请求的数据为：{'mobile_phone': '15500000001', 'pwd': '12345678901234567', 'type': 1} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,440--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '密码格式为8到16位', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,441--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '密码格式为8到16位', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,441--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,442--INFO:python_api_automation:对比实际提取结果密码格式为8到16位,和预期结果密码格式为8到16位，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,442--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,450--INFO:python_api_automation:替换标识符后的用例：{'id': 10, 'title': '不输入密码', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone":"13300000001","type":1}', 'assertion': '[{"expression":"$..code","expected":1,"type":"equal"},{"expression":"$..msg","expected":"密码为空","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,451--INFO:python_api_automation:请求的数据为：{'mobile_phone': '13300000001', 'type': 1} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,482--INFO:python_api_automation:响应结果为：{'code': 1, 'msg': '密码为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,483--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 1, 'type': 'equal'}, {'expression': '$..msg', 'expected': '密码为空', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,483--INFO:python_api_automation:对比实际提取结果1,和预期结果1，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,483--INFO:python_api_automation:对比实际提取结果密码为空,和预期结果密码为空，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,484--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,492--INFO:python_api_automation:替换标识符后的用例：{'id': 11, 'title': '注册名11位', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone":"13303007856","pwd":"12345678","type":1,"reg_name":"12345678909991"}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"用户昵称长度超过10位","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,493--INFO:python_api_automation:请求的数据为：{'mobile_phone': '13303007856', 'pwd': '12345678', 'type': 1, 'reg_name': '12345678909991'} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,528--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '用户昵称长度超过10位', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,529--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '用户昵称长度超过10位', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,529--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,529--INFO:python_api_automation:对比实际提取结果用户昵称长度超过10位,和预期结果用户昵称长度超过10位，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,530--INFO:python_api_automation:断言响应结果成功--myassert.py---64
+------2021-07-31 21:34:01,596--INFO:python_api_automation:替换标识符后的用例：{'id': 12, 'title': '类型输入非0，1内容', 'method': 'post', 'url': '/member/register', 'req_data': '{"mobile_phone":"13300003456","pwd":"12345678","type":2}', 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"不支持的用户类型","type":"equal"}]', 'assert_db': None}--myreplace.py---52
+------2021-07-31 21:34:01,597--INFO:python_api_automation:请求的数据为：{'mobile_phone': '13300003456', 'pwd': '12345678', 'type': 2} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/register 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 21:34:01,638--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '不支持的用户类型', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 21:34:01,639--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '不支持的用户类型', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 21:34:01,639--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,640--INFO:python_api_automation:对比实际提取结果不支持的用户类型,和预期结果不支持的用户类型，是否相等：True--myassert.py---55
+------2021-07-31 21:34:01,640--INFO:python_api_automation:断言响应结果成功--myassert.py---64

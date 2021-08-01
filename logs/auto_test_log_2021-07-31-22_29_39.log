@@ -1,0 +1,108 @@
+------2021-07-31 22:29:39,912--INFO:python_api_automation:
+
+
+打开表单审核项目接口
+
+--myexcel.py---20
+------2021-07-31 22:29:40,066--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='15500000000',获取执行条数的执行结果为1--mypymysql.py---31
+------2021-07-31 22:29:40,155--INFO:python_api_automation:执行的sql语句为select id from member where mobile_phone='18976971999',获取执行条数的执行结果为0--mypymysql.py---31
+------2021-07-31 22:29:40,159--INFO:python_api_automation:替换标识符后的用例：{'id': 1, 'title': '普通用户-登录', 'type': 'setup', 'method': 'post', 'url': '/member/login', 'pre_sql': None, 'req_data': '{"mobile_phone": "15500000000","pwd": "12345678"}', 'extract': '{"token":"$..token","member_id":"$..id"}', 'assertion': None, 'assert_db': None}--myreplace.py---52
+------2021-07-31 22:29:40,160--INFO:python_api_automation:请求的数据为：{'mobile_phone': '15500000000', 'pwd': '12345678'} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/login 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json'}--myrequests.py---33
+------2021-07-31 22:29:40,225--INFO:python_api_automation:响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 36, 'leave_amount': 816075.38, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2021-06-30 14:15:46.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2021-07-31 22:34:40', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ'}}, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 22:29:40,226--INFO:python_api_automation:转换提取表达式字符串成字典：{'token': '$..token', 'member_id': '$..id'}--myextract.py---28
+------2021-07-31 22:29:40,229--INFO:python_api_automation:设置测试类的全局变量token,值为eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ--myextract.py---35
+------2021-07-31 22:29:40,230--INFO:python_api_automation:设置测试类的全局变量member_id,值为36--myextract.py---35
+------2021-07-31 22:29:40,233--INFO:python_api_automation:脚本生成时间戳2021-07-31-22_29_40,并替换到#strftime#中--myreplace.py---43
+------2021-07-31 22:29:40,233--INFO:python_api_automation:替换标识符后的用例：{'id': 2, 'title': '新增项目-1个月+审核状态为审核中', 'type': 'setup', 'method': 'post', 'url': '/loan/add', 'pre_sql': None, 'req_data': '{"member_id":36,"title":"借款项目2021-07-31-22_29_40","amount":20000,"loan_rate":18,"loan_term":1,"loan_date_type":1,"bidding_days":5}', 'extract': '{"loan_id":"$..id"}', 'assertion': None, 'assert_db': None}--myreplace.py---52
+------2021-07-31 22:29:40,233--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ--myrequests.py---72
+------2021-07-31 22:29:40,233--INFO:python_api_automation:请求的数据为：{'member_id': 36, 'title': '借款项目2021-07-31-22_29_40', 'amount': 20000, 'loan_rate': 18, 'loan_term': 1, 'loan_date_type': 1, 'bidding_days': 5} 
+ 请求的地址url为http://api.lemonban.com/futureloan/loan/add 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ'}--myrequests.py---33
+------2021-07-31 22:29:40,268--INFO:python_api_automation:响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 37738, 'member_id': 36, 'title': '借款项目2021-07-31-22_29_40', 'amount': 20000.0, 'loan_rate': 18.0, 'loan_term': 1, 'loan_date_type': 1, 'bidding_days': 5, 'create_time': '2021-07-31 22:29:40.0', 'bidding_start_time': None, 'full_time': None, 'status': 1}, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 22:29:40,269--INFO:python_api_automation:转换提取表达式字符串成字典：{'loan_id': '$..id'}--myextract.py---28
+------2021-07-31 22:29:40,269--INFO:python_api_automation:设置测试类的全局变量loan_id,值为37738--myextract.py---35
+------2021-07-31 22:29:40,273--INFO:python_api_automation:替换标识符后的用例：{'id': 3, 'title': '管理员-登录', 'type': 'setup', 'method': 'post', 'url': '/member/login', 'pre_sql': None, 'req_data': '{"mobile_phone": "18976971999","pwd": "12345678"}', 'extract': '{"token":"$..token","member_id":"$..id"}', 'assertion': None, 'assert_db': None}--myreplace.py---52
+------2021-07-31 22:29:40,273--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ--myrequests.py---72
+------2021-07-31 22:29:40,273--INFO:python_api_automation:请求的数据为：{'mobile_phone': '18976971999', 'pwd': '12345678'} 
+ 请求的地址url为http://api.lemonban.com/futureloan/member/login 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ'}--myrequests.py---33
+------2021-07-31 22:29:40,364--INFO:python_api_automation:响应结果为：{'code': 1001, 'msg': '账号信息错误', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 22:29:40,364--INFO:python_api_automation:转换提取表达式字符串成字典：{'token': '$..token', 'member_id': '$..id'}--myextract.py---28
+------2021-07-31 22:29:40,563--INFO:python_api_automation:替换标识符后的用例：{'id': 4, 'title': '审核项目（审核前状态：审核中）---审核通过', 'type': 'success', 'method': 'patch', 'url': '/loan/audit', 'pre_sql': None, 'req_data': '{"loan_id":37738,"approved_or_not":true}', 'extract': None, 'assertion': '[{"expression":"$..code","expected":0,"type":"equal"},{"expression":"$..msg","expected":"OK","type":"equal"}]', 'assert_db': '[{"sql":"select l.status from loan l where id=37738","expected":{\'status\': 2},"type_db":"equal"}]'}--myreplace.py---52
+------2021-07-31 22:29:40,564--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ--myrequests.py---72
+------2021-07-31 22:29:40,564--INFO:python_api_automation:请求的数据为：{'loan_id': 37738, 'approved_or_not': True} 
+ 请求的地址url为http://api.lemonban.com/futureloan/loan/audit 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ'}--myrequests.py---33
+------2021-07-31 22:29:40,601--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '普通会员不能审核项目，请使用管理员账号', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 22:29:40,601--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 0, 'type': 'equal'}, {'expression': '$..msg', 'expected': 'OK', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 22:29:40,601--INFO:python_api_automation:对比实际提取结果2,和预期结果0，是否相等：False--myassert.py---55
+------2021-07-31 22:29:40,602--INFO:python_api_automation:对比实际提取结果普通会员不能审核项目，请使用管理员账号,和预期结果OK，是否相等：False--myassert.py---55
+------2021-07-31 22:29:40,602--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---61
+------2021-07-31 22:29:40,602--INFO:python_api_automation:转换断言数据库字符串成对应格式[{'sql': 'select l.status from loan l where id=37738', 'expected': {'status': 2}, 'type_db': 'equal'}]--myassert.py---83
+------2021-07-31 22:29:40,693--INFO:python_api_automation:执行的sql语句为select l.status from loan l where id=37738,执行结果为{'status': 1}--mypymysql.py---39
+------2021-07-31 22:29:40,694--INFO:python_api_automation:对比实际结果{'status': 1},和预期结果{'status': 2}，是否相等：False--myassert.py---100
+------2021-07-31 22:29:40,694--ERROR:python_api_automation:存在断言数据库结果失败的情况，请检查断言与实际响应结果--myassert.py---106
+------2021-07-31 22:29:40,709--INFO:python_api_automation:替换标识符后的用例：{'id': 5, 'title': '审核项目（审核前状态：审核通过）---审核通过', 'type': 'fail', 'method': 'patch', 'url': '/loan/audit', 'pre_sql': None, 'req_data': '{"loan_id":37738,"approved_or_not":true}', 'extract': None, 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"项目不在审核中状态","type":"equal"}]', 'assert_db': '[{"sql":"select l.status from loan l where id=37738","expected":{\'status\': 2},"type_db":"equal"}]'}--myreplace.py---52
+------2021-07-31 22:29:40,709--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ--myrequests.py---72
+------2021-07-31 22:29:40,710--INFO:python_api_automation:请求的数据为：{'loan_id': 37738, 'approved_or_not': True} 
+ 请求的地址url为http://api.lemonban.com/futureloan/loan/audit 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ'}--myrequests.py---33
+------2021-07-31 22:29:40,751--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '普通会员不能审核项目，请使用管理员账号', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 22:29:40,752--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '项目不在审核中状态', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 22:29:40,752--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 22:29:40,753--INFO:python_api_automation:对比实际提取结果普通会员不能审核项目，请使用管理员账号,和预期结果项目不在审核中状态，是否相等：False--myassert.py---55
+------2021-07-31 22:29:40,753--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---61
+------2021-07-31 22:29:40,753--INFO:python_api_automation:转换断言数据库字符串成对应格式[{'sql': 'select l.status from loan l where id=37738', 'expected': {'status': 2}, 'type_db': 'equal'}]--myassert.py---83
+------2021-07-31 22:29:40,842--INFO:python_api_automation:执行的sql语句为select l.status from loan l where id=37738,执行结果为{'status': 1}--mypymysql.py---39
+------2021-07-31 22:29:40,842--INFO:python_api_automation:对比实际结果{'status': 1},和预期结果{'status': 2}，是否相等：False--myassert.py---100
+------2021-07-31 22:29:40,842--ERROR:python_api_automation:存在断言数据库结果失败的情况，请检查断言与实际响应结果--myassert.py---106
+------2021-07-31 22:29:40,858--INFO:python_api_automation:替换标识符后的用例：{'id': 6, 'title': '审核项目（审核前状态：还款中）---审核通过', 'type': 'fail', 'method': 'patch', 'url': '/loan/audit', 'pre_sql': 'update loan set `status`=3 where id=37738', 'req_data': '{"loan_id":37738,"approved_or_not":true}', 'extract': None, 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"项目不在审核中状态","type":"equal"}]', 'assert_db': '[{"sql":"select l.status from loan l where id=37738","expected":{\'status\': 3},"type_db":"equal"}]'}--myreplace.py---52
+------2021-07-31 22:29:40,947--INFO:python_api_automation:执行的sql语句为update loan set `status`=3 where id=37738--mypymysql.py---62
+------2021-07-31 22:29:40,966--WARNING:python_api_automation:执行成功，提交--mypymysql.py---68
+------2021-07-31 22:29:40,967--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ--myrequests.py---72
+------2021-07-31 22:29:40,967--INFO:python_api_automation:请求的数据为：{'loan_id': 37738, 'approved_or_not': True} 
+ 请求的地址url为http://api.lemonban.com/futureloan/loan/audit 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ'}--myrequests.py---33
+------2021-07-31 22:29:41,012--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '普通会员不能审核项目，请使用管理员账号', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 22:29:41,012--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '项目不在审核中状态', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 22:29:41,013--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 22:29:41,013--INFO:python_api_automation:对比实际提取结果普通会员不能审核项目，请使用管理员账号,和预期结果项目不在审核中状态，是否相等：False--myassert.py---55
+------2021-07-31 22:29:41,013--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---61
+------2021-07-31 22:29:41,013--INFO:python_api_automation:转换断言数据库字符串成对应格式[{'sql': 'select l.status from loan l where id=37738', 'expected': {'status': 3}, 'type_db': 'equal'}]--myassert.py---83
+------2021-07-31 22:29:41,089--INFO:python_api_automation:执行的sql语句为select l.status from loan l where id=37738,执行结果为{'status': 3}--mypymysql.py---39
+------2021-07-31 22:29:41,089--INFO:python_api_automation:对比实际结果{'status': 3},和预期结果{'status': 3}，是否相等：True--myassert.py---100
+------2021-07-31 22:29:41,089--INFO:python_api_automation:断言数据库结果成功--myassert.py---109
+------2021-07-31 22:29:41,097--INFO:python_api_automation:替换标识符后的用例：{'id': 7, 'title': '审核项目（审核前状态：还款完成）---审核通过', 'type': 'fail', 'method': 'patch', 'url': '/loan/audit', 'pre_sql': 'update loan set `status`=4 where id=37738', 'req_data': '{"loan_id":37738,"approved_or_not":true}', 'extract': None, 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"项目不在审核中状态","type":"equal"}]', 'assert_db': '[{"sql":"select l.status from loan l where id=37738","expected":{\'status\': 4},"type_db":"equal"}]'}--myreplace.py---52
+------2021-07-31 22:29:41,218--INFO:python_api_automation:执行的sql语句为update loan set `status`=4 where id=37738--mypymysql.py---62
+------2021-07-31 22:29:41,241--WARNING:python_api_automation:执行成功，提交--mypymysql.py---68
+------2021-07-31 22:29:41,242--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ--myrequests.py---72
+------2021-07-31 22:29:41,242--INFO:python_api_automation:请求的数据为：{'loan_id': 37738, 'approved_or_not': True} 
+ 请求的地址url为http://api.lemonban.com/futureloan/loan/audit 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ'}--myrequests.py---33
+------2021-07-31 22:29:41,286--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '普通会员不能审核项目，请使用管理员账号', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 22:29:41,286--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '项目不在审核中状态', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 22:29:41,287--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 22:29:41,287--INFO:python_api_automation:对比实际提取结果普通会员不能审核项目，请使用管理员账号,和预期结果项目不在审核中状态，是否相等：False--myassert.py---55
+------2021-07-31 22:29:41,287--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---61
+------2021-07-31 22:29:41,288--INFO:python_api_automation:转换断言数据库字符串成对应格式[{'sql': 'select l.status from loan l where id=37738', 'expected': {'status': 4}, 'type_db': 'equal'}]--myassert.py---83
+------2021-07-31 22:29:41,342--INFO:python_api_automation:执行的sql语句为select l.status from loan l where id=37738,执行结果为{'status': 4}--mypymysql.py---39
+------2021-07-31 22:29:41,343--INFO:python_api_automation:对比实际结果{'status': 4},和预期结果{'status': 4}，是否相等：True--myassert.py---100
+------2021-07-31 22:29:41,343--INFO:python_api_automation:断言数据库结果成功--myassert.py---109
+------2021-07-31 22:29:41,369--INFO:python_api_automation:替换标识符后的用例：{'id': 8, 'title': '审核项目（审核前状态：审核不通过）---审核通过', 'type': 'fail', 'method': 'patch', 'url': '/loan/audit', 'pre_sql': 'update loan set `status`=5 where id=37738', 'req_data': '{"loan_id":37738,"approved_or_not":true}', 'extract': None, 'assertion': '[{"expression":"$..code","expected":2,"type":"equal"},{"expression":"$..msg","expected":"项目不在审核中状态","type":"equal"}]', 'assert_db': '[{"sql":"select l.status from loan l where id=37738","expected":{\'status\': 5},"type_db":"equal"}]'}--myreplace.py---52
+------2021-07-31 22:29:41,427--INFO:python_api_automation:执行的sql语句为update loan set `status`=5 where id=37738--mypymysql.py---62
+------2021-07-31 22:29:41,437--WARNING:python_api_automation:执行成功，提交--mypymysql.py---68
+------2021-07-31 22:29:41,437--INFO:python_api_automation:存在token值，为请求头增加Bearer Token:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ--myrequests.py---72
+------2021-07-31 22:29:41,437--INFO:python_api_automation:请求的数据为：{'loan_id': 37738, 'approved_or_not': True} 
+ 请求的地址url为http://api.lemonban.com/futureloan/loan/audit 
+ 请求头为：{'X-Lemonban-Media-Type': 'lemonban.v2', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjM2LCJleHAiOjE2Mjc3NDIwODB9.AkUbxY5nLEtzbOXdulBIHUaGF1xY_7lDzSiYWm582QbmlRRyqWTyZuJwztTQuRuwLr_J0HMVdJozC7PV9trETQ'}--myrequests.py---33
+------2021-07-31 22:29:41,477--INFO:python_api_automation:响应结果为：{'code': 2, 'msg': '普通会员不能审核项目，请使用管理员账号', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}--myrequests.py---52
+------2021-07-31 22:29:41,477--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$..code', 'expected': 2, 'type': 'equal'}, {'expression': '$..msg', 'expected': '项目不在审核中状态', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
+------2021-07-31 22:29:41,477--INFO:python_api_automation:对比实际提取结果2,和预期结果2，是否相等：True--myassert.py---55
+------2021-07-31 22:29:41,477--INFO:python_api_automation:对比实际提取结果普通会员不能审核项目，请使用管理员账号,和预期结果项目不在审核中状态，是否相等：False--myassert.py---55
+------2021-07-31 22:29:41,478--ERROR:python_api_automation:存在断言响应结果失败的情况，请检查断言与实际响应结果--myassert.py---61
+------2021-07-31 22:29:41,478--INFO:python_api_automation:转换断言数据库字符串成对应格式[{'sql': 'select l.status from loan l where id=37738', 'expected': {'status': 5}, 'type_db': 'equal'}]--myassert.py---83
+------2021-07-31 22:29:41,561--INFO:python_api_automation:执行的sql语句为select l.status from loan l where id=37738,执行结果为{'status': 5}--mypymysql.py---39
+------2021-07-31 22:29:41,561--INFO:python_api_automation:对比实际结果{'status': 5},和预期结果{'status': 5}，是否相等：True--myassert.py---100
+------2021-07-31 22:29:41,562--INFO:python_api_automation:断言数据库结果成功--myassert.py---109
