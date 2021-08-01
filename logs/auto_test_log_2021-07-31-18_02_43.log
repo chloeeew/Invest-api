@@ -1,2 +1,0 @@
-------2021-07-31 18:02:44,022--INFO:python_api_automation:转换断言响应结果的字符串成对应格式[{'expression': '$.code', 'expected': 0, 'type': 'equal'}, {'expression': '$..msg', 'expected': 'OK', 'type': 'equal'}],类型为<class 'list'>--myassert.py---37
-------2021-07-31 18:02:44,040--ERROR:python_api_automation:$.code无法在{'code': 0, 'msg': 'OK', 'data': {'id': 677, 'leave_amount': 57028.01, 'mobile_phone': '18610100022', 'reg_name': 'py37小简', 'reg_time': '2021-06-30 22:36:48.0', 'type': 0}}中提取出来，请检查表达式--myassert.py---49
