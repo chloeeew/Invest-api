@@ -19,7 +19,6 @@ The database connection address and interface address are for private tesing. Th
 
 #### Requirements
 - pip install -r requirements.txt
-- you will also need to install Chromedriver
 
 
 
