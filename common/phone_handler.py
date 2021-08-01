@@ -7,7 +7,7 @@ Contact:403505960@qq.com
 """
 
 from faker import Faker
-from common.mypymysql import MyMySql
+from common.mysql_manager import MySqlManager
 
 def get_phone_num():
     """
@@ -18,7 +18,7 @@ def get_phone_num():
     while True:
         phone_num = Faker("zh_CN").phone_number()
         sql = f"select id from member where mobile_phone='{phone_num}'"
-        msq = MyMySql().get_query_count(sql)
+        msq = MySqlManager().get_query_count(sql)
         if msq == 0:
             return phone_num
 
@@ -31,7 +31,7 @@ def is_phone_exist(phone_num):
     """
 
     sql = f"select id from member where mobile_phone='{phone_num}'"
-    msq = MyMySql().get_query_count(sql)
+    msq = MySqlManager().get_query_count(sql)
     if msq == 0:
         return False
     else:

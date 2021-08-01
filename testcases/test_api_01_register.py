@@ -8,9 +8,9 @@ Contact:403505960@qq.com
 
 import pytest
 import allure
-from common.myexcel import MyExcel
+from common.excel_manager import ExcelManager
 from common.baseapi import Baseapi
-from common.myreplace import replace_excel_dict_by_mark
+from common.replace_handler import replace_excel_dict_by_mark
 
 
 @allure.feature("注册测试")
@@ -18,7 +18,7 @@ from common.myreplace import replace_excel_dict_by_mark
 class TestRegister:
 
     @allure.title("注册测试用例")
-    @pytest.mark.parametrize("cases",MyExcel("注册接口").get_excel_data())
+    @pytest.mark.parametrize("cases", ExcelManager("注册接口").get_excel_data())
     def test_register(self, cases, class_share_data_init):
         with allure.step(f"测试用例名称：{cases.get('title')}-\n步骤一：替换值"):
             cases = replace_excel_dict_by_mark(cases, class_share_data_init)

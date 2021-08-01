@@ -1,20 +1,19 @@
 server:
- host: http://api.lemonban.com/futureloan
+ host: data have been erased
 
 headers:
- X-Lemonban-Media-Type: lemonban.v2
  Content-Type: application/json
 
 database:
- host: api.lemonban.com
- user: future
+ host: data have been erased
+ user: data have been erased
  password: '123456'
  port: 3306
- database: futureloan
+ database: data have been erased
 
 
 
 log_conf:
   name: "python_api_automation"
   level: "INFO"
-  formatter: "------%(asctime)s--%(levelname)s:%(name)s:%(message)s--%(filename)s---%(lineno)s"
+  formatter: "%(asctime)s-%(levelname)s:%(name)s-%(filename)s-%(created)s -%(lineno)s:::%(message)s"

@@ -6,7 +6,7 @@ Contact:403505960@qq.com
 ==================
 """
 
-from common.mydata import Data
+from common.global_data import Data
 from common.logger_handler import logger
 import jsonpath
 import ast

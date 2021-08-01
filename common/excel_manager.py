@@ -13,7 +13,7 @@ import openpyxl
 """封装处理打开excel读取数据的操作"""
 
 
-class MyExcel:
+class ExcelManager:
     def __init__(self,sheet_name):
         self.wb = openpyxl.load_workbook(cases_file)
         self.m_sheet = self.wb[sheet_name]
@@ -46,4 +46,4 @@ class MyExcel:
 
 
 if __name__ == "__main__":
-    print(MyExcel("充值接口").get_excel_data())
+    print(ExcelManager("充值接口").get_excel_data())

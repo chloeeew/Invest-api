@@ -9,8 +9,8 @@ Contact:403505960@qq.com
 
 import pytest
 import allure
-from common.myexcel import MyExcel
-from common.myreplace import replace_excel_dict_by_mark
+from common.excel_manager import ExcelManager
+from common.replace_handler import replace_excel_dict_by_mark
 from common.baseapi import Baseapi
 
 @allure.feature("新增项目测试")
@@ -18,7 +18,7 @@ from common.baseapi import Baseapi
 class TestAddProject:
 
     @allure.title("新增项目用例")
-    @pytest.mark.parametrize("cases", MyExcel("新增项目接口").get_excel_data())
+    @pytest.mark.parametrize("cases", ExcelManager("新增项目接口").get_excel_data())
     def test_add_project(self, cases, class_share_data_init):
         with allure.step(f"测试用例名称：{cases.get('title')}-\n步骤一：接口关联，数据替换"):
             cases = replace_excel_dict_by_mark(cases, class_share_data_init)

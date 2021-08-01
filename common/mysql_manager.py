@@ -10,7 +10,7 @@ from common.yaml_controller import yaml_config
 from common.logger_handler import logger
 import pymysql
 
-class MyMySql:
+class MySqlManager:
 
     def __init__(self):
         db_info = yaml_config["database"]

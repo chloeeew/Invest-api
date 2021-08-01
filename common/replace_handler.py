@@ -6,9 +6,9 @@ Contact:403505960@qq.com
 ==================
 """
 
-from common.mydata import Data
+from common.global_data import Data
 from common.globalmethod import get_current_time_str_time
-from common.myphone import get_phone_num
+from common.phone_handler import get_phone_num
 from common.logger_handler import logger
 import re
 

@@ -16,7 +16,7 @@ import json
 目的：封装Requests库，使用requests方法就能按需求调用post或get方法
 """
 
-class MyRequests:
+class RequestsManager:
     def __init__(self):
         """设置header"""
         self.host = yaml_config["server"]["host"]

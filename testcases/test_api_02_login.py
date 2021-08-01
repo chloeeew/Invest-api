@@ -7,9 +7,9 @@ Contact:403505960@qq.com
 """
 import pytest
 import allure
-from common.myexcel import MyExcel
+from common.excel_manager import ExcelManager
 from common.baseapi import Baseapi
-from common.myreplace import replace_excel_dict_by_mark
+from common.replace_handler import replace_excel_dict_by_mark
 
 
 @allure.feature("登录测试")
@@ -17,7 +17,7 @@ from common.myreplace import replace_excel_dict_by_mark
 class TestLogin:
 
     @allure.title('登录测试用例')
-    @pytest.mark.parametrize("cases",MyExcel("登录接口").get_excel_data())
+    @pytest.mark.parametrize("cases", ExcelManager("登录接口").get_excel_data())
     def test_login(self, cases, class_share_data_init):
 
         with allure.step(f"测试用例名称：{cases.get('title')}-\n步骤一：接口关联，数据替换"):

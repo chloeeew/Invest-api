@@ -7,12 +7,12 @@ Contact:403505960@qq.com
 """
 from decimal import Decimal
 from common.logger_handler import logger
-from common.mypymysql import MyMySql
+from common.mysql_manager import MySqlManager
 import jsonpath
 
 # 用 jsonpath 方式提取出response的值
 
-class MyAssert:
+class AssertManager:
 
     def assert_by_json(self, response_dict, assert_str):
         """
@@ -82,7 +82,7 @@ class MyAssert:
         assert_db_list = eval(assert_str)
         logger.info(f"转换断言数据库字符串成对应格式{assert_db_list}")
         # 建立数据库连接
-        db = MyMySql()
+        db = MySqlManager()
 
         # 遍历比对
         for check_dict in assert_db_list:

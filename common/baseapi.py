@@ -5,19 +5,19 @@ Time:2021/7/31 19:06
 Contact:403505960@qq.com
 ==================
 """
-from common.myrequests import MyRequests
-from common.mydata import Data
-from common.myassert import MyAssert
-from common.mypymysql import MyMySql
-from common.myextract import extract_from_response
-from common.myreplace import replace_excel_dict_by_mark
+from common.requests_manager import RequestsManager
+from common.global_data import Data
+from common.assert_manager import AssertManager
+from common.mysql_manager import MySqlManager
+from common.extract_manager import extract_from_response
+from common.replace_handler import replace_excel_dict_by_mark
 
 class Baseapi:
 
 
     def api_requests(self,method,api_name,data,global_data:Data):
         """根据token的情况请求数据"""
-        r_requests = MyRequests()
+        r_requests = RequestsManager()
         if hasattr(global_data, "token"):
             response_format = r_requests.send_requests(method=method, api_name=api_name,
                                                        data=data,
@@ -33,7 +33,7 @@ class Baseapi:
         # 存储断言结果的集合
         result_list = []
 
-        r_assert = MyAssert()
+        r_assert = AssertManager()
         if assertion:
             result_list.append(r_assert.assert_by_json(response_json, assertion))
         if assert_db:
@@ -53,6 +53,6 @@ class Baseapi:
 
     def api_execute_update_by_pre_sql(self,pre_sql):
         if pre_sql:
-            MyMySql().update_data(pre_sql)
+            MySqlManager().update_data(pre_sql)
 
 

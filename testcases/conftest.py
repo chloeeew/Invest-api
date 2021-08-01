@@ -6,9 +6,9 @@ Contact:403505960@qq.com
 ==================
 """
 
-from common.myphone import is_phone_exist
-from common.myrequests import MyRequests
-from common.mydata import Data
+from common.phone_handler import is_phone_exist
+from common.requests_manager import RequestsManager
+from common.global_data import Data
 import pytest
 
 @pytest.fixture(scope="session",autouse=True)
@@ -21,12 +21,12 @@ def global_init():
     phone_num_exist = is_phone_exist(Data.user)
     if not phone_num_exist:
         req_data = {"mobile_phone":Data.user,"pwd":Data.pwd}
-        MyRequests().send_requests("post","/member/register",req_data)
+        RequestsManager().send_requests("post", "/member/register", req_data)
 
     phone_admin_num_exit = is_phone_exist(Data.admin)
     if not phone_admin_num_exit:
         req_data_admin = {"mobile_phone":Data.admin,"pwd":Data.admin_pwd,"type":0}
-        MyRequests().send_requests("post", "/member/register", req_data_admin)
+        RequestsManager().send_requests("post", "/member/register", req_data_admin)
 
 @pytest.fixture(scope="class")
 def class_share_data_init():
