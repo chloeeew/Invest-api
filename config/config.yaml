@@ -12,7 +12,6 @@ database:
  database: data have been erased
 
 
-
 log_conf:
   name: "python_api_automation"
   level: "INFO"
