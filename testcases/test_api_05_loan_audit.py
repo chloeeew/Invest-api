@@ -13,7 +13,6 @@ from common.replace_handler import replace_excel_dict_by_mark
 from common.baseapi import Baseapi
 
 
-
 @allure.feature("审核项目测试")
 @pytest.mark.usefixtures("class_share_data_init")
 class TestLoanAudit:

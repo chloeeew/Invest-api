@@ -30,6 +30,12 @@ class Baseapi:
 
 
     def api_get_assert_result(self,response_json:dict,assertion,assert_db):
+        """
+        传递响应结果、以及excel中给获取到的响应结果断言和数据库断言，
+        1、判断断言是否有值
+        2、值存在则断言，把断言结果存储到断言结果集合中
+        3、如果断言解雇集合中存在False（及断言失败），那么返回False，否则方法返回True
+        """
         # 存储断言结果的集合
         result_list = []
 
@@ -46,12 +52,20 @@ class Baseapi:
 
 
     def api_extract(self,response_json:dict,extract,global_data:Data):
+        """
+        传入响应结果、excel中的提取字段，以及全局变量类实例
+        如果提取字段存在值，那么就调用提取方法提取值
+        """
         if not extract:
             return None
         extract_from_response(response_json, extract,global_data)
 
 
     def api_execute_update_by_pre_sql(self,pre_sql):
+        """
+        传入响应结果、excel中的pre_sql预执行字段
+        如果该字段存在值，那么调用方法执行
+        """
         if pre_sql:
             MySqlManager().update_data(pre_sql)
 
